@@ -45,7 +45,7 @@
   grid-area: form;
   align-self: center;
 }
-.form-group{
+.form-group-topbar{
   display: flex;
   width: 100%;
   justify-content: center;
@@ -281,13 +281,15 @@
 .card {
   display: flex;
   flex-direction: column;
-  padding: 8px;
+  padding: 16px;
   border-radius: 5px;
   box-shadow: 0px 5px 5px 1px var(--dark-screen);
-  margin: 8px 0px;
+  margin: 0px 20px 20px 0px;
+}
+.card.img {
+  padding: 8px;
 }
 .card-header{
-  border-bottom: 1px solid grey;
   font-weight: bold;
   display: flex;
   flex-direction: column;
@@ -307,3 +309,22 @@
   width: var(--w-75);
 }
 .card.w-100{}
+.form{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.card-body{
+  padding-top: 8px;
+  border-top: 1px solid grey;
+}
+.form-group{
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.form-input {
+  padding: 3px;
+  font-size: 1rem;
+}
