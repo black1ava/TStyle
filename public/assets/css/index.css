@@ -13,6 +13,9 @@
   --transition: .25s;
   --white-2: hsl(0, 0%, 80%);
   --dark: hsl(0, 0%, 0%);
+  --w-45: 45%;
+  --height: calc(100vh - 56px);
+  --side-menu-toggle-top: 76px;
 }
 
 .topbar{
@@ -169,4 +172,105 @@
 
 .dropdown-list {
   list-style: none;
+}
+
+.sidebar{
+  position: fixed;
+  left: -250px;
+  height: var(--height);
+  width: 250px;
+  background-color: #212529;
+  top: 56px;
+  transition: all var(--transition);
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+
+.sidebar.active{
+  left: 0;
+}
+
+.menu-link{
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 10px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  margin: 20px 20px 0px 20px;
+  transition: all var(--transition);
+  opacity: 50%;
+}
+
+.menu-link:hover{
+  font-size: 1.8rem;
+  color: white;
+  opacity: 100%;
+  font-weight: bold;
+  text-decoration: none;
+  padding-left: 20px;
+  margin: 20px 0px 0px 0px;
+}
+
+.sidebar-menu{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  list-style-type: none;
+}
+
+.sidebar-toggle-icon{
+  margin-left: 20px;
+  opacity: 0.4;
+  cursor: pointer;
+  transition: var(--transition);
+  top: var(--side-menu-toggle-top);
+  left: 5px;
+  position: fixed;
+  width: 35px;
+  height: 5px;
+  background: var(--dark);
+}
+
+.sidebar-toggle-icon::after{
+  display: block;
+  content: '';
+  width: 35px;
+  height: 5px;
+  background: var(--dark);
+  position: fixed;
+  top: 84px;
+  transition: var(--transition);
+}
+
+.sidebar-toggle-icon::before{
+  display: block;
+  content: '';
+  width: 35px;
+  height: 5px;
+  background: var(--dark);
+  position: fixed;
+  top: 68px;
+  transition: var(--transition);
+}
+
+.sidebar-toggle-icon.close{
+  background: transparent;
+  left: 270px
+}
+
+.sidebar-toggle-icon.close::after{
+  top: 76px;
+  transform: rotate(45deg);
+}
+
+.sidebar-toggle-icon.close::before{
+  top: 76px;
+  transform: rotate(-45deg);
+}
+
+.sidebar-toggle-icon:hover, .sidebar-toggle-icon:focus{
+  opacity: 1;
 }

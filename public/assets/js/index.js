@@ -29,4 +29,21 @@ window.onload = function(){
       count++;
     });
   });
+
+  const sidebarToggles = document.getElementsByClassName('sidebar-toggle-icon');
+  Array.prototype.map.call(sidebarToggles, function(sidebarToggle){
+
+    const sidebars = document.getElementsByClassName('sidebar');
+    const sidebar = Array.prototype.filter.call(sidebars, function(sidebar){
+      return sidebar.getAttribute('id') === sidebarToggle.getAttribute('toggle-for');
+    });
+
+    sidebarToggle.addEventListener('click', function(){
+      sidebarToggle.classList.toggle('close');
+
+      if(sidebar.length === 0) return null;
+      //
+      sidebar[0].classList.toggle('active');
+    });
+  });
 }
