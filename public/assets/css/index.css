@@ -16,6 +16,7 @@
   --w-45: 45%;
   --height: calc(100vh - 56px);
   --side-menu-toggle-top: 76px;
+  --dark-screen: rgba(0, 0, 0, 0.4);
 }
 
 .topbar{
@@ -264,13 +265,34 @@
 .sidebar-toggle-icon.close::after{
   top: 76px;
   transform: rotate(45deg);
+  background: var(--white)
 }
 
 .sidebar-toggle-icon.close::before{
   top: 76px;
   transform: rotate(-45deg);
+  background: var(--white)
 }
 
 .sidebar-toggle-icon:hover, .sidebar-toggle-icon:focus{
   opacity: 1;
+}
+
+.dark-screen{
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: var(--dark-screen);
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  display: none;
+}
+
+.dark-screen.active {
+  display: block;
+}
+
+.dark-screen.inactive {
+  display: none;
 }

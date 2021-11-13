@@ -38,10 +38,22 @@ window.onload = function(){
       return sidebar.getAttribute('id') === sidebarToggle.getAttribute('toggle-for');
     });
 
+    const darkScreen = document.createElement('div');
+    darkScreen.setAttribute('class', 'dark-screen');
+    sidebar[0].appendChild(darkScreen);
+
     sidebarToggle.addEventListener('click', function(){
       sidebarToggle.classList.toggle('close');
 
       if(sidebar.length === 0) return null;
+
+      sidebar[0].classList.toggle('active');
+      darkScreen.classList.toggle('active');
+    });
+
+    darkScreen.addEventListener('click', function(){
+      sidebarToggle.classList.toggle('close');
+      darkScreen.classList.toggle('active');
       sidebar[0].classList.toggle('active');
     });
   });
