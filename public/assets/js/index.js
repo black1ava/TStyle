@@ -1,4 +1,7 @@
 window.onload = function(){
+
+  const mainContent = document.getElementsByClassName('main-content');
+
   const anchors = document.getElementsByClassName('topbar-dropdown');
   const dropdowns = Array.prototype.filter.call(anchors, function(anchor){
     return anchor.getAttribute('toggle-type') === 'dropdown';
@@ -49,12 +52,14 @@ window.onload = function(){
 
       sidebar[0].classList.toggle('active');
       darkScreen.classList.toggle('active');
+      mainContent[0].classList.toggle('side-bar-active');
     });
 
     darkScreen.addEventListener('click', function(){
       sidebarToggle.classList.toggle('close');
       darkScreen.classList.toggle('active');
       sidebar[0].classList.toggle('active');
+      mainContent[0].classList.toggle('side-bar-active');
     });
   });
 }

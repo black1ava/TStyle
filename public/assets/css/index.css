@@ -296,3 +296,18 @@
 .dark-screen.inactive {
   display: none;
 }
+
+.main-content{
+  position: fixed;
+  top: 100px;
+  z-index: -2;
+  --main-content-width: calc(100vw - 20px);
+  width: var(--main-content-width);
+  transition: var(--transition);
+  padding: 10px;
+}
+
+.main-content.side-bar-active {
+  margin-left: 250px;
+  width: calc(var(--main-content-width) - 250px)
+}
