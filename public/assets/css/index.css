@@ -13,10 +13,13 @@
   --transition: .25s;
   --white-2: hsl(0, 0%, 80%);
   --dark: hsl(0, 0%, 0%);
-  --w-45: 45%;
   --height: calc(100vh - 56px);
   --side-menu-toggle-top: 76px;
   --dark-screen: rgba(0, 0, 0, 0.4);
+  --w-25: 25%;
+  --w-50: 50%;
+  --w-75: 75%;
+  --w-100: 100%;
 }
 
 .topbar{
@@ -305,9 +308,41 @@
   width: var(--main-content-width);
   transition: var(--transition);
   padding: 10px;
+  --main-content-height: calc(100vh - 120px);
+  height: var(--main-content-height);
+  overflow-y: scroll;
+  scrollbar-width: none;
 }
 
 .main-content.side-bar-active {
   margin-left: 250px;
   width: calc(var(--main-content-width) - 250px)
 }
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  border-radius: 5px;
+  box-shadow: 0px 5px 5px 1px var(--dark-screen);
+  margin: 8px 0px;
+}
+
+.card-header{
+  border-bottom: 1px solid grey;
+  font-weight: bold;
+}
+
+.card.w-25{
+  width: var(--w-25);
+}
+
+.card.w-50{
+  width: var(--w-50);
+}
+
+.card.w-75{
+  width: var(--w-75);
+}
+
+.card.w-100{}
