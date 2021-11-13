@@ -1,5 +1,5 @@
 window.onload = function(){
-  const anchors = document.getElementsByTagName('a');
+  const anchors = document.getElementsByClassName('topbar-dropdown');
   const dropdowns = Array.prototype.filter.call(anchors, function(anchor){
     return anchor.getAttribute('toggle-type') === 'dropdown';
   });
@@ -10,7 +10,7 @@ window.onload = function(){
       return icon.getAttribute('toggle-for') === dropdown.getAttribute('id');
     });
 
-    const contents = document.getElementsByClassName('dropdown-content');
+    const contents = document.getElementsByClassName('topbar-dropdown-content');
     const content = Array.prototype.filter.call(contents, function(content){
       return content.getAttribute('content-of') === dropdown.getAttribute('id');
     });
@@ -23,7 +23,7 @@ window.onload = function(){
       }
 
       if(content.length > 0){
-        content[0].classList.toggle('dropdown-content-active');
+        content[0].classList.toggle('topbar-dropdown-content-active');
       }
 
       count++;
@@ -42,7 +42,6 @@ window.onload = function(){
       sidebarToggle.classList.toggle('close');
 
       if(sidebar.length === 0) return null;
-      //
       sidebar[0].classList.toggle('active');
     });
   });
