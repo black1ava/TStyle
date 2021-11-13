@@ -10,12 +10,22 @@ window.onload = function(){
       return icon.getAttribute('toggle-for') === dropdown.getAttribute('id');
     });
 
-    if(icon.length === 0) return null;
+    const contents = document.getElementsByClassName('dropdown-content');
+    const content = Array.prototype.filter.call(contents, function(content){
+      return content.getAttribute('content-of') === dropdown.getAttribute('id');
+    });
 
     let count = 1;
-
     dropdown.addEventListener('click', function(){
-      icon[0].style.transform = `rotate(${ (count % 2) * 180 }deg)`;
+
+      if(icon.length > 0){
+        icon[0].style.transform = `rotate(${ (count % 2) * 180 }deg)`;
+      }
+
+      if(content.length > 0){
+        content[0].classList.toggle('dropdown-content-active');
+      }
+
       count++;
     });
   });
