@@ -69,10 +69,8 @@
   background: var(--green);
   color: var(--white);
 }
-.form-control {
+.form-input-topbar {
   min-width: 25em;
-  padding: 5px;
-  font-size: 1rem;
 }
 .topbar-menu{
   grid-area: menu;
